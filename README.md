@@ -16,7 +16,7 @@ It's a very initial model without the exact shape of Lynxmotion arm. Later we wi
 ## Usage
 
 
-###1. set up the ros workspace
+### 1. set up the ros workspace
 
 ROS tutorial here: [Creating a workspace for catkin](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
 
@@ -35,7 +35,7 @@ source /opt/ros/kinetic/setup.bash
 ```
 
 
-###2. Launch Gazebo Model
+### 2. Launch Gazebo Model
 
 ```python
 roslaunch lynx_gazebo lynx_gazebo.launch
