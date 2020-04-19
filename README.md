@@ -5,6 +5,14 @@ This is a path planning for Lynx robot based on Gazebo and ROS
 
 The goal and our method : [Proposal](Proposal.pdf)
 
+
+
+## Part One: Gazebo Model
+
+We refer to the model in this repo https://github.com/gdepaepe/al5d_description    
+It's a very initial model without the exact shape of Lynxmotion arm. Later we will fulfill it. 
+
+
 ## Usage
 
 
