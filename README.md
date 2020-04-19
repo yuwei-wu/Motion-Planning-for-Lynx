@@ -3,7 +3,7 @@ This is a path planning for Lynx robot based on Gazebo and ROS
 
 ## Proposal
 
-The goal and our method : [Proposal](Proposal.pdf)
+The goal and our method : [Proposal](proposal.pdf)
 
 
 
