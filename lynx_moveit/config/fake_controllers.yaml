@@ -1,0 +1,11 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - base_rotate
+      - shoulder_tilt
+      - elbow_tilt
+      - wrist_tilt
+      - wrist_rotate
+  - name: fake_gripper_controller
+    joints:
+      - open_gripper
