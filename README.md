@@ -4,19 +4,20 @@ This is a path planning for Lynx robot based on Gazebo and ROS
 ## Proposal
 
 The goal and our method : [Proposal](proposal.pdf)
+We would like to achive some planning method such as RRT, RRT* and SST to our simulator
 
 
-
-## Part One: Gazebo Model
+## Part One: The Gazebo Model
 
 We refer to the model in this repo https://github.com/gdepaepe/al5d_description    
-It's a very initial model without the exact shape of Lynxmotion arm. Later we will fulfill it. 
+It's the initial model without the exact shape of Lynxmotion arm.
 
 
-## Usage
+### Usage
 
+#### 0. Install ROS, Gazebo and Moveit!
 
-### 1. set up the ros workspace
+#### 1. set up the ros workspace
 
 ROS tutorial here: [Creating a workspace for catkin](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
 
@@ -35,10 +36,24 @@ source /opt/ros/kinetic/setup.bash
 ```
 
 
-### 2. Launch Gazebo Model
+#### 2. Launch Gazebo Model
 
-```python
+```
 roslaunch lynx_gazebo lynx_gazebo.launch
 ```
+
+## Part Two: Manipulation with MoveIt!
+
+run and try planning on MoveIt
+```
+roslaunch lynx_moveit demo.launch
+```
+
+
+
+
+
+## Part Three: 
+## Reference
 
 
