@@ -1,6 +1,11 @@
 # Path Planning for Lynx Robots on ROS/Gazebo
 This is a path planning for Lynx robot based on Gazebo and ROS
 
+<p align="center">
+   <img src="docs/img/2.gif">
+</p>
+
+
 ## Proposal
 
 The goal and our method : [Proposal](docs/proposal.pdf)
@@ -63,6 +68,14 @@ source /opt/ros/kinetic/setup.bash
 ```
 roslaunch lynx_gazebo lynx_gazebo.launch
 ```
+
+
+
+<p align="center">
+   <img src="docs/img/2.gif">
+</p>
+
+
 
 
 
