@@ -19,7 +19,7 @@ We refer to the urdf file in this repo https://github.com/gdepaepe/al5d_descript
 
 ### 1. Parameters of the robot
 
-we have check the robot parameters of the model with 5l5d
+we have check the robot parameters of the model with 5l5d, we did not revise it as this model has more size information than what we've done in class.
 
 which is in lynx_descripton/lynx.xacro
 ```
@@ -27,9 +27,9 @@ which is in lynx_descripton/lynx.xacro
     <xacro:property name="base_radius" value="0.048" />
     <xacro:property name="upper_base_height" value="0.006" />
     <xacro:property name="upper_arm_offset" value="0.022" />
-    <xacro:property name="upper_arm_length" value="0.14605" />
+    <xacro:property name="upper_arm_length" value="0.14605" />    <!-- a2=146.05 -->
     <xacro:property name="upper_arm_width" value="0.05" />
-    <xacro:property name="lower_arm_length" value="0.187325" />
+    <xacro:property name="lower_arm_length" value="0.187325" />    <!-- a3=187.32 -->
     <xacro:property name="lower_arm_width" value="0.035" />
     <xacro:property name="wrist_length" value="0.055" />
     <xacro:property name="wrist_width" value="0.025" />
