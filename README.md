@@ -44,6 +44,18 @@ which is in lynx_descripton/lynx.xacro
 
 #### (1) Install ROS, Gazebo and Moveit!
 
+There are two version of ROS, and we choose the kinetic version. [Installation of ROS](http://wiki.ros.org/ROS/Installation)
+
+
+Installation of Gazebo
+```
+curl -sSL http://get.gazebosim.org | sh
+```
+
+Installation of Moveit!
+```
+sudo apt-get install ros-kinetic-moveit
+```
 #### (2) Set up the ros workspace
 
 ROS tutorial here: [Creating a workspace for catkin](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
@@ -69,15 +81,9 @@ source /opt/ros/kinetic/setup.bash
 roslaunch lynx_gazebo lynx_gazebo.launch
 ```
 
-
-
 <p align="center">
    <img src="docs/img/gazebo_start.png" width="90%" height="90%">
 </p>
-
-
-
-
 
 
 ## Part Two: Manipulation with MoveIt!
@@ -89,14 +95,12 @@ run and try planning on MoveIt
 roslaunch lynx_moveit demo.launch
 ```
 
-
-
 <p align="center">
    <img src="docs/img/moveit_start.png" width="90%" height="90%">
 </p>
 
 
-although moveit has some useful motion planning method, we would like to test our motion planning on the simulation.
+Although moveit has some useful motion planning method, we would like to test our motion planning on the simulation.
 
 
 ## Part Three: Motion Planning on Robot
