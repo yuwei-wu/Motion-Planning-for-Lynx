@@ -115,8 +115,9 @@ Although moveit has some useful motion planning method, we would like to test ou
 
 ### 1.Set the obstacles sence
 
+There are three methods to add the obstacles. (1) add it in gazebo world (2) via python to add in planning scene (3) add the .scene file with moveit.   
 
-we create the scence file and then add it to demo.launch
+We firstly build with gazebo and you can check lynx_gazebo/obs_model, but with better controller of MoveIt, we convert to use the .scene to add it. We use the map information in lab2 and create the scence file
 
 for instance, the map2 obstacles: 
 ```
@@ -124,8 +125,7 @@ block 150 60  -50.0 400 66.7  350.0
 block 150 -66.7  -50.0 400 -60  350.0
 
 ```
-
-convert to moveit scene form: (in lynx_moveit/scenes/obs2.scene)
+Then we convert to moveit scene form: (in lynx_moveit/scenes/obs2.scene). For each box, row 1 is the the size of the obstacles and row 2 is the center of the obstacles.
 ```
 obs2
  * obs2
@@ -144,13 +144,19 @@ obs2
 
 ```
 
-
+Finally, we add it to demo.launch
 
 ```
   <arg name="scene_file" default="$(find lynx_moveit)/scenes/obs2.scene"/> 
   <node name = "moveit_publish_scene_from_text" pkg= "moveit_ros_planning" type = "moveit_publish_scene_from_text" args= "$(arg scene_file)"/>
   
  ```
+
+When you relaunch the demo.launch, you can see the obstacles in the environment, we set map1 and map2 in it: 
+
+<p align="center">
+   <img src="docs/img/obs.jpeg" width="90%" height="90%">
+</p>
 
 ### 2.Import the information of obstacles in python
 
