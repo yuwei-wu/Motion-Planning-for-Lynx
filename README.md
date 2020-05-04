@@ -2,7 +2,7 @@
 This is a path planning for Lynx robot based on Gazebo and ROS
 
 <p align="center">
-   <img src="docs/img/2.gif">
+   <img src="docs/img/2.gif" width="70%" height="70%">
 </p>
 
 
@@ -72,7 +72,7 @@ roslaunch lynx_gazebo lynx_gazebo.launch
 
 
 <p align="center">
-   <img src="docs/img/2.gif">
+   <img src="docs/img/gazebo_start.png" width="90%" height="90%">
 </p>
 
 
@@ -82,6 +82,8 @@ roslaunch lynx_gazebo lynx_gazebo.launch
 
 ## Part Two: Manipulation with MoveIt!
 
+we use moveit to build the robot driver and moveing group.
+
 run and try planning on MoveIt
 ```
 roslaunch lynx_moveit demo.launch
@@ -89,10 +91,29 @@ roslaunch lynx_moveit demo.launch
 
 
 
+<p align="center">
+   <img src="docs/img/moveit_start.png" width="90%" height="90%">
+</p>
 
 
-## Part Three: Our Motion Planning
+although moveit has some useful motion planning method, we would like to test our motion planning on the simulation.
 
+
+## Part Three: Motion Planning on Robot
+
+### 1.Set the obstacles sence
+
+
+### 2.Import the information of obstacles in python
+
+
+### 3. RRT Path planning with static obstacles
+
+
+## Part Four: comparasion of 
+ 
+ 
+ 
  
 ## Reference
 
