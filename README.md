@@ -2,7 +2,7 @@
 This is a path planning for Lynx robot based on Gazebo and ROS
 
 <p align="center">
-   <img src="docs/img/2.gif" width="70%" height="70%">
+   <img src="docs/img/2.gif">
 </p>
 
 
