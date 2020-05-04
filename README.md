@@ -8,7 +8,7 @@ This is a path planning for Lynx robot based on Gazebo and ROS
 
 ## Proposal
 
-The goal and our method : [Proposal](docs/proposal.pdf)
+The goal and our method : [Proposal](docs/proposal.pdf)   
 We would like to achive some planning method such as RRT, RRT* and SST to our simulator
 
 
@@ -89,6 +89,12 @@ roslaunch lynx_gazebo lynx_gazebo.launch
 ## Part Two: Manipulation with MoveIt!
 
 we use moveit to build the robot driver and moveing group.
+
+if you want to start from scratch, you can use the urdf file and the setup assistant.
+
+```
+roslaunch moveit_setup_assistant setup_assistant.launch
+```
 
 run and try planning on MoveIt
 ```
