@@ -1,5 +1,4 @@
 <launch>
-
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
   <!-- Allow user to specify database location -->
@@ -24,7 +23,6 @@
   </include>
 
   <!-- If needed, broadcast static tf for robot root -->
-  
 
   <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
@@ -53,5 +51,9 @@
   <include file="$(find lynx_moveit)/launch/default_warehouse_db.launch" if="$(arg db)">
     <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
   </include>
+
+
+  <arg name="scene_file" default="$(find lynx_moveit)/scenes/obs1.scene"/> 
+  <node name = "moveit_publish_scene_from_text" pkg= "moveit_ros_planning" type = "moveit_publish_scene_from_text" args= "$(arg scene_file)"/>
 
 </launch>
