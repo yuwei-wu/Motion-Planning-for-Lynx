@@ -95,6 +95,8 @@ if you want to start from scratch, you can use the urdf file and the setup assis
 ```
 roslaunch moveit_setup_assistant setup_assistant.launch
 ```
+moveit has the Kinematic Solver as kdl_kinematics_plugin/KDLKinematicsPlugin, so we directly use it.   
+
 
 run and try planning on MoveIt
 ```
@@ -113,6 +115,42 @@ Although moveit has some useful motion planning method, we would like to test ou
 
 ### 1.Set the obstacles sence
 
+
+we create the scence file and then add it to demo.launch
+
+for instance, the map2 obstacles: 
+```
+block 150 60  -50.0 400 66.7  350.0  
+block 150 -66.7  -50.0 400 -60  350.0
+
+```
+
+convert to moveit scene form: (in lynx_moveit/scenes/obs2.scene)
+```
+obs2
+ * obs2
+ 2
+ box
+ 0.25 0.0067 0.4
+ 0.275 -0.06335 0.2
+ 0 0 0 1
+ 0 0 0 0
+ box
+ 0.25 0.0067 0.4
+ 0.275 0.06335 0.2
+ 0 0 0 1
+ 0 0 0 0
+ .
+
+```
+
+
+
+```
+  <arg name="scene_file" default="$(find lynx_moveit)/scenes/obs2.scene"/> 
+  <node name = "moveit_publish_scene_from_text" pkg= "moveit_ros_planning" type = "moveit_publish_scene_from_text" args= "$(arg scene_file)"/>
+  
+ ```
 
 ### 2.Import the information of obstacles in python
 
