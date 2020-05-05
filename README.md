@@ -205,10 +205,12 @@ The terminal will appear this:
 ```
 
 <p align="center">
-   <img src="docs/img/map1-astar.gif" width="50%" height="50%"> <img src="docs/img/map1-rrt.gif" width="50%" height="50%">
+   <img src="docs/img/map1_astar.gif" width="40%" height="40%"> <img src="docs/img/map1_rrt.gif" width="40%" height="40%">
 </p>
 
-
+<p align="center">
+   <img src="docs/img/map1_potential.gif" width="40%" height="40%"> <img src="docs/img/map1_sst.gif" width="40%" height="40%">
+</p>
 
 Actually in the matlab simulator, we consider the lynxmotion robot as teh line and does not include more contour information.  
 Therefore the map2 planning looks like harder to perform in this simulation. 
