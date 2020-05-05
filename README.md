@@ -3,6 +3,7 @@ This is a path planning for Lynx robot based on Gazebo and ROS
 
 <p align="center">
    <img src="docs/img/map2_rrt.gif" width="70%" height="70%">
+
 </p>
 
 
@@ -115,8 +116,9 @@ Although moveit has some useful motion planning method, we would like to test ou
 
 ### 1.Set the obstacles sence
 
+There are three methods to add the obstacles. (1) add it in gazebo world (2) via python to add in planning scene (3) add the .scene file with moveit.   
 
-we create the scence file and then add it to demo.launch
+We firstly build with gazebo and you can check lynx_gazebo/obs_model, but with better controller of MoveIt, we convert to use the .scene to add it. We use the map information in lab2 and create the scence file
 
 for instance, the map2 obstacles: 
 ```
@@ -124,8 +126,7 @@ block 150 60  -50.0 400 66.7  350.0
 block 150 -66.7  -50.0 400 -60  350.0
 
 ```
-
-convert to moveit scene form: (in lynx_moveit/scenes/obs2.scene)
+Then we convert to moveit scene form: (in lynx_moveit/scenes/obs2.scene). For each box, row 1 is the the size of the obstacles and row 2 is the center of the obstacles.
 ```
 obs2
  * obs2
@@ -144,7 +145,7 @@ obs2
 
 ```
 
-
+Finally, we add it to demo.launch
 
 ```
   <arg name="scene_file" default="$(find lynx_moveit)/scenes/obs2.scene"/> 
@@ -152,19 +153,48 @@ obs2
   
  ```
 
+When you relaunch the demo.launch, you can see the obstacles in the environment, we set map1 and map2 in it: 
+
+<p align="center">
+   <img src="docs/img/obs.jpeg" width="90%" height="90%">
+</p>
+
 ### 2.Import the information of obstacles in python
 
 
 ### 3. RRT Path planning with static obstacles
 
+The moveit has its default planning method, and we use different paths computed from previous labs and SST to test our result on it.    
 
-## Part Four: comparasion of 
- 
- 
- 
- 
-## Reference
+You can run this command:
+```
+rosrun lynx_planning motion_planning.py
 
+```
+
+The terminal will appear this:
+```
+[ INFO] [1588641416.759847848]: Ready to take commands for planning group arm.
+[INFO] [1588641419.963014]: The current joints state is:
+[ 0.  0.  0.  0.  0.  0.]
+[INFO] [1588641421.763024]: The current joints state is:
+[ 0.2  0.   0.   0.   0.   0. ]
+[INFO] [1588641423.362822]: The current joints state is:
+[ 0.4  0.   0.   0.   0.   0. ]
+[INFO] [1588641424.962562]: The current joints state is:
+[ 0.6  0.   0.   0.   0.   0. ]
+[INFO] [1588641426.562636]: The current joints state is:
+[ 0.8  0.   0.   0.   0.   0. ]
+[INFO] [1588641428.162926]: The current joints state is:
+[ 1.  0.  0.  0.  0.  0.]
+[INFO] [1588641429.762598]: The current joints state is:
+[ 1.2  0.   0.   0.   0.   0. ]
+[INFO] [1588641430.263416]: Planning is Finished
+```
+
+
+## Part Four: Comparasion of Different Planner
+ 
 
 
 
