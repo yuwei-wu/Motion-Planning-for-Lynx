@@ -166,32 +166,52 @@ When you relaunch the demo.launch, you can see the obstacles in the environment,
 
 The moveit has its default planning method, and we use different paths computed from previous labs and SST to test our result on it.    
 
-You can run this command:
+You can run this command, and it will perform these four methods accordingly
 ```
 rosrun lynx_planning motion_planning.py
-
 ```
+
 
 The terminal will appear this:
 ```
-[ INFO] [1588641416.759847848]: Ready to take commands for planning group arm.
-[INFO] [1588641419.963014]: The current joints state is:
+[ INFO] [1588644280.556859246]: Ready to take commands for planning group arm.
+[INFO] [1588644283.663095]: The current joints state is:
 [ 0.  0.  0.  0.  0.  0.]
-[INFO] [1588641421.763024]: The current joints state is:
-[ 0.2  0.   0.   0.   0.   0. ]
-[INFO] [1588641423.362822]: The current joints state is:
-[ 0.4  0.   0.   0.   0.   0. ]
-[INFO] [1588641424.962562]: The current joints state is:
-[ 0.6  0.   0.   0.   0.   0. ]
-[INFO] [1588641426.562636]: The current joints state is:
-[ 0.8  0.   0.   0.   0.   0. ]
-[INFO] [1588641428.162926]: The current joints state is:
-[ 1.  0.  0.  0.  0.  0.]
-[INFO] [1588641429.762598]: The current joints state is:
+[INFO] [1588644283.863290]: The current joints state is:
+[ 0.  0.  0.  0.  0.  0.]
+[INFO] [1588644285.463268]: The current joints state is:
+[  2.00000000e-01   2.22044600e-16   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00]
+[INFO] [1588644287.062594]: The current joints state is:
+[  4.00000000e-01   2.22044600e-16   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00]
+[INFO] [1588644288.663085]: The current joints state is:
+[  6.00000000e-01   2.22044600e-16   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00]
+[INFO] [1588644290.263303]: The current joints state is:
+[  8.00000000e-01   2.22044600e-16   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00]
+[INFO] [1588644291.863217]: The current joints state is:
+[  1.00000000e+00   2.22044600e-16   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00]
+[INFO] [1588644293.663698]: The current joints state is:
+[  1.20000000e+00   2.22044600e-16   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00]
+[INFO] [1588644293.863530]: The current joints state is:
 [ 1.2  0.   0.   0.   0.   0. ]
-[INFO] [1588641430.263416]: Planning is Finished
+[INFO] [1588644294.063726]: The current joints state is:
+[ 1.2  0.   0.   0.   0.   0. ]
+[INFO] [1588644294.563793]: Astar Planning is Finished !
 ```
 
+<p align="center">
+   <img src="docs/img/map1-astar.gif" width="50%" height="50%"> <img src="docs/img/map1-rrt.gif" width="50%" height="50%">
+</p>
+
+
+
+Actually in the matlab simulator, we consider the lynxmotion robot as teh line and does not include more contour information.  
+Therefore the map2 planning looks like harder to perform in this simulation. 
 
 ## Part Four: Comparasion of Different Planner
  
