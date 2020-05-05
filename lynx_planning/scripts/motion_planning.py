@@ -15,9 +15,9 @@ import numpy as np
 path = os.path.dirname(os.path.abspath(__file__)) + '/../paths/'
 
 joint_goal_astar = np.loadtxt(path +os.listdir(path)[0])
-#joint_goal_rrt = np.loadtxt(path +  os.listdir(path)[1])
-#joint_goal_potential = np.loadtxt(path +  os.listdir(path)[2])
-#joint_goal_sst = np.loadtxt(path +  os.listdir(path)[3])
+joint_goal_rrt = np.loadtxt(path +  os.listdir(path)[1])
+joint_goal_potential = np.loadtxt(path +  os.listdir(path)[2])
+joint_goal_sst = np.loadtxt(path +  os.listdir(path)[3])
 
 
 def all_close(goal, actual, tolerance):
@@ -156,19 +156,28 @@ class MoveRobot(object):
     move_group.execute(plan, wait=True)
 
 
+
+def perform_planning(lynx_moving, joint_goal, method_name):
+
+  joint_goal = joint_goal_astar
+  for i in range(len(joint_goal)):
+    lynx_moving.go_to_joint_state(joint_goal[i])
+
+
+  cartesian_plan, fraction = lynx_moving.plan_cartesian_path()
+  #lynx_moving.display_trajectory(cartesian_plan)
+  lynx_moving.execute_plan(cartesian_plan)
+  rospy.loginfo("%s Planning is Finished !", method_name)
+
 def main():
   try:
     lynx_moving = MoveRobot()
 
-    joint_goal = joint_goal_astar
-    for i in range(len(joint_goal)):
-      lynx_moving.go_to_joint_state(joint_goal[i])
+    perform_planning(lynx_moving, joint_goal_astar, "Astar")
+    perform_planning(lynx_moving, joint_goal_rrt, "RRT")
+    perform_planning(lynx_moving, joint_goal_potential, "Potential Field")
+    perform_planning(lynx_moving, joint_goal_sst, "SST")
 
-
-    cartesian_plan, fraction = lynx_moving.plan_cartesian_path()
-    #lynx_moving.display_trajectory(cartesian_plan)
-    lynx_moving.execute_plan(cartesian_plan)
-    rospy.loginfo("Planning is Finished !")
 
   except rospy.ROSInterruptException:
     return
