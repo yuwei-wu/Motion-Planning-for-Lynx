@@ -214,8 +214,6 @@ The terminal will appear this:
 
 Actually in the matlab simulator, we consider the lynxmotion robot as teh line and does not include more contour information.  
 Therefore the map2 planning looks like harder to perform in this simulation. 
-
-## Part Four: Comparasion of Different Planner
  
 
 
