@@ -212,8 +212,7 @@ The terminal will appear this:
    <img src="docs/img/map1_potential.gif" width="40%" height="40%"> <img src="docs/img/map1_sst.gif" width="40%" height="40%">
 </p>
 
-Actually in the matlab simulator, we consider the lynxmotion robot as teh line and does not include more contour information.  
-Therefore the map2 planning looks like harder to perform in this simulation. 
+Actually in the matlab simulator, we consider the Lynxmotion robot as lines with extended edges and does not include more contour information.(Our lab2 code consider it as a box, but it is not completely the same as real situation.) Therefore, the map2 planning looks harder to perform in this simulation.
  
 
 
