@@ -112,7 +112,7 @@ function [path] = sst(map, start, goal)
 end
 
 
-function [state, control] = random_sample(map, robot)
+function [state, control] = random_sample(map, robot)  %sampling process
     state = [];
     first = true;
     while first || isRobotCollided(state, map, robot)
